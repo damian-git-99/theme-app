@@ -3,7 +3,7 @@ import './header.css'
 import styled from 'styled-components'
 import { ThemeToggleContext } from '../context/ThemeProvider'
 
-const Button = styled.button`
+export const Button = styled.button`
   cursor: pointer;
   border-radius: 5px;
   padding: 10px 20px;

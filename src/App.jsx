@@ -3,6 +3,7 @@ import './app.css'
 import { ThemeToggleContext } from './context/ThemeProvider'
 import { createGlobalStyle } from 'styled-components'
 import { Header } from './components/Header'
+import { Post } from './components/Post'
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -17,11 +18,10 @@ function App () {
   return (
       <>
       <Header />
-      <main>
-        <GlobalStyles theme={{ ...theme }}/>
-        <h1>My App</h1>
-        <p>This is some text.</p>
-      </main>
+      <GlobalStyles theme={{ ...theme }}/>
+      <section className='container'>
+        <Post />
+      </section>
     </>
   )
 }
