@@ -1,33 +1,28 @@
 import { useContext } from 'react'
+import './app.css'
 import { ThemeToggleContext } from './context/ThemeProvider'
-import styled, { createGlobalStyle } from 'styled-components'
-
-const Button = styled.button`
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border-radius: 3px;
-  padding: 10px;
-  color: ${props => props.theme.color};
-  background-color: ${props => props.theme.background};
-`
+import { createGlobalStyle } from 'styled-components'
+import { Header } from './components/Header'
 
 const GlobalStyles = createGlobalStyle`
   body {
     background-color: ${props => props.theme.background};
+    color: ${props => props.theme.color};
+    transition: all 300ms;
   }
-  
 `
 
 function App () {
   const { theme } = useContext(ThemeToggleContext)
   return (
-      <div>
+      <>
+      <Header />
+      <main>
         <GlobalStyles theme={{ ...theme }}/>
         <h1>My App</h1>
         <p>This is some text.</p>
-        <Button theme={{ ...theme }}>Click me</Button>
-      </div>
+      </main>
+    </>
   )
 }
 

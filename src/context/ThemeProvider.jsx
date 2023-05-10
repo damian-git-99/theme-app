@@ -2,17 +2,15 @@
 import React, { useState } from 'react'
 
 export const lightTheme = {
-  body: '#FFF',
-  color: '#ffffff',
-  toggleBorder: '#FFF',
-  background: '#363537'
+  color: '#333',
+  background: '#fff',
+  border: '2px solid #333'
 }
 
 export const darkTheme = {
-  body: '#363537',
-  color: '#FAFAFA',
-  toggleBorder: '#6B8096',
-  background: '#999'
+  color: '#fff',
+  background: '#333',
+  border: '2px solid #fff'
 }
 
 export const ThemeToggleContext = React.createContext({})
@@ -23,7 +21,7 @@ export const ThemeProvider = ({ children }) => {
     setTheme(theme === 'light' ? 'dark' : 'light')
   }
   return (
-    <ThemeToggleContext.Provider value={{ toggleTheme, theme: darkTheme }}>
+    <ThemeToggleContext.Provider value={{ toggleTheme, theme: theme === 'light' ? lightTheme : darkTheme, themeName: theme === 'light' ? 'dark mode' : 'light mode' }}>
       { children }
     </ThemeToggleContext.Provider>
   )
