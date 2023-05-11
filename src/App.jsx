@@ -11,13 +11,19 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
-function App (props) {
+function App () {
   return (
       <>
       <GlobalStyles />
       <Header />
-      <section className='container'>
-        <Post />
+      <section className='container posts'>
+        <h1>Recent Posts</h1>
+        <div className='post-layout'>
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+        </div>
       </section>
     </>
   )

@@ -6,3 +6,30 @@
 html {
   font-family: 'Roboto', sans-serif;
 }
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+}
+
+.posts h1 {
+  text-align: center;
+  padding: 20px 0;
+  font-weight: 700;
+  font-size: 35px;
+}
+
+.post-layout {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .post-layout {
+    grid-template-columns: unset;
+  }
+}
+
