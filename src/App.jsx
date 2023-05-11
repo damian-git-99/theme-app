@@ -1,6 +1,4 @@
-import { useContext } from 'react'
 import './app.css'
-import { ThemeToggleContext } from './context/ThemeProvider'
 import { createGlobalStyle } from 'styled-components'
 import { Header } from './components/Header'
 import { Post } from './components/Post'
@@ -13,12 +11,11 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
-function App () {
-  const { theme } = useContext(ThemeToggleContext)
+function App (props) {
   return (
       <>
+      <GlobalStyles />
       <Header />
-      <GlobalStyles theme={{ ...theme }}/>
       <section className='container'>
         <Post />
       </section>

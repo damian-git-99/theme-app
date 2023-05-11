@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react'
+import { ThemeProvider } from 'styled-components'
 
 export const lightTheme = {
   color: '#333',
@@ -15,14 +16,16 @@ export const darkTheme = {
 
 export const ThemeToggleContext = React.createContext({})
 
-export const ThemeProvider = ({ children }) => {
+export const ThemeContextProvider = ({ children }) => {
   const [theme, setTheme] = useState('light')
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light')
   }
   return (
-    <ThemeToggleContext.Provider value={{ toggleTheme, theme: theme === 'light' ? lightTheme : darkTheme, themeName: theme === 'light' ? 'dark mode' : 'light mode' }}>
-      { children }
+    <ThemeToggleContext.Provider value={{ toggleTheme, theme }}>
+      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+        { children }
+      </ThemeProvider>
     </ThemeToggleContext.Provider>
   )
 }

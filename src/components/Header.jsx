@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import './header.css'
 import styled from 'styled-components'
-import { ThemeToggleContext } from '../context/ThemeProvider'
+import { ThemeToggleContext } from '../context/ThemeContextProvider'
 
 export const Button = styled.button`
   cursor: pointer;
@@ -14,7 +14,7 @@ export const Button = styled.button`
 `
 
 export const Header = () => {
-  const { toggleTheme, theme, themeName } = useContext(ThemeToggleContext)
+  const { toggleTheme, theme } = useContext(ThemeToggleContext)
   const handleClick = () => {
     toggleTheme()
   }
@@ -28,8 +28,8 @@ export const Header = () => {
           <li>
             <Button
               onClick={handleClick}
-              theme={{ ...theme }}>
-              {themeName}
+              >
+              { theme === 'light' ? 'Dark' : 'Light' }
             </Button>
           </li>
         </ul>
