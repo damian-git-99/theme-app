@@ -12,7 +12,7 @@ export const Post = () => {
       <p className="post-author">By Juan Pérez</p>
       <img src={img} alt="image" className="post-image"></img>
       <p className="post-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus ac felis eleifend efficitur. Proin vel ex euismod, fermentum mauris eget, imperdiet justo. Sed vehicula nunc eu metus fermentum, at auctor arcu mollis. Ut quis congue lectus, eget feugiat ipsum. Sed at nunc id sapien tincidunt ultrices. Sed at eleifend velit. Aliquam faucibus, dolor vel eleifend blandit, sapien ex molestie mi, vitae tincidunt quam leo vel orci.</p>
-      <Button style={{ ...theme }}>Leer más</Button>
+      <Button style={{ ...theme }}>Read More</Button>
     </article>
   )
 }
