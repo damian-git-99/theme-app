@@ -1,11 +1,10 @@
-import { useContext } from 'react'
-import './post.css'
 import { Button } from './Header'
-import { ThemeContext } from 'styled-components'
+import { useTheme } from 'styled-components'
+import './post.css'
 
 const img = 'https://images.unsplash.com/photo-1659521996814-5436db7916eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1507&q=80'
 export const Post = () => {
-  const theme = useContext(ThemeContext)
+  const theme = useTheme()
   return (
     <article style={{ ...theme }} className="post">
       <h2 className="post-title">Post Title</h2>
